@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.simple-difficult, .medium-difficult, .hard-difficult {
+    padding: 10px;
+    margin: 10px;
+}
+
+.grid-container {
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: calc(100% / 10 - 10px);
+    margin: 10px 5px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.box.blue {
+    background-color: lightskyblue;
+}
