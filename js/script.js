@@ -11,32 +11,35 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 function createGrillEasy(max){
    
         for (let i = 1; i <= max; i++) {
-            createNewBox(gridContainerHtml);
+            createNewBox(gridContainerHtml, i);
         }
     }
 
 
 function createGrillMedium(max){
         for (let i = 1; i <= max; i++) {
-            createNewBox(gridContainerHtml);
+            createNewBox(gridContainerHtml, i);
         }
 
 }
 
 function createGrillHard(max){
         for (let i = 1; i <= max; i++) {
-            createNewBox(gridContainerHtml);
+            createNewBox(gridContainerHtml, i);
         }
     
 }
 
-function createNewBox(container) {
+function createNewBox(container, n) {
     const square = document.createElement('div');
     square.className = 'box';
     container.append(square);
+    // square.innerHTML = n;
     square.addEventListener('click', function(){
         // this.classList.add('blue');
         this.classList.toggle('blue'); //accendi spegni colore
+        square.innerHTML = n;
+
     })   
 }
 
