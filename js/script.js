@@ -7,6 +7,30 @@ con difficoltà 3 => tra 1 e 49
 Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 */
 
+function createGrillEasy(max){
+    buttonEasy.addEventListener('click', function(){
+        for (let i = 0; i < max; i++) {
+            createNewBox(gridContainerHtml);
+        }
+    })
+}
+
+function createGrillMedium(max){
+    buttonEasy.addEventListener('click', function(){
+        for (let i = 0; i < max; i++) {
+            createNewBox(gridContainerHtml);
+        }
+    })
+}
+
+function createGrillHard(max){
+    buttonEasy.addEventListener('click', function(){
+        for (let i = 0; i < max; i++) {
+            createNewBox(gridContainerHtml);
+        }
+    })
+}
+
 function createNewBox(container) {
     const square = document.createElement('div');
     square.className = 'box';
@@ -19,9 +43,10 @@ function createNewBox(container) {
 
 
 const gridContainerHtml = document.querySelector('.grid-container');
+const buttonEasy = document.querySelector('easy-difficult');
+const buttonMedium = document.querySelector('medium-difficult');
+const buttonHard = document.querySelector('hard-difficult');
 
-//quando creiamo la funzione, ricordarsi di cambiare il num con una variabile MAX
-
-for (let i = 0; i < 100; i++) {
-    createNewBox(gridContainerHtml);
-}
+buttonEasy.addEventListener('click', function(){
+    createGrillEasy(100);
+})
