@@ -51,23 +51,20 @@ const buttonHard = document.querySelector('.hard-difficult');
 buttonEasy.addEventListener('click', function(){
     gridContainerHtml.innerHTML = "";
     gridContainerHtml.classList.add("easy");
-    gridContainerHtml.classList.remove("medium");
-    gridContainerHtml.classList.remove("hard");
+    gridContainerHtml.classList.remove("medium", "hard");
     createGrillEasy(100);
 })
 
 buttonMedium.addEventListener('click', function(){
     gridContainerHtml.innerHTML = "";
     gridContainerHtml.classList.add("medium");
-    gridContainerHtml.classList.remove("easy");
-    gridContainerHtml.classList.remove("hard");
+    gridContainerHtml.classList.remove("easy", "hard");
     createGrillMedium(81);
 })
 
 buttonHard.addEventListener('click', function(){
     gridContainerHtml.innerHTML = "";
     gridContainerHtml.classList.add("hard");
-    gridContainerHtml.classList.remove("medium");
-    gridContainerHtml.classList.remove("easy");
+    gridContainerHtml.classList.remove("medium", "easy");
     createGrillHard(49);
 })
