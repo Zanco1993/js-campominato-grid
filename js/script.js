@@ -34,11 +34,10 @@ function createNewBox(container, n) {
     const square = document.createElement('div');
     square.className = 'box';
     container.append(square);
-    // square.innerHTML = n;
+    square.innerHTML = n;
     square.addEventListener('click', function(){
         // this.classList.add('blue');
         this.classList.toggle('blue'); //accendi spegni colore
-        square.innerHTML = n;
 
     })   
 }
@@ -50,13 +49,19 @@ const buttonMedium = document.querySelector('.medium-difficult');
 const buttonHard = document.querySelector('.hard-difficult');
 
 buttonEasy.addEventListener('click', function(){
+    gridContainerHtml.innerHTML = "";
+    gridContainerHtml.classList.add("easy");
     createGrillEasy(100);
 })
 
 buttonMedium.addEventListener('click', function(){
-    createGrillEasy(81);
+    gridContainerHtml.innerHTML = "";
+    gridContainerHtml.classList.add("medium");
+    createGrillMedium(81);
 })
 
 buttonHard.addEventListener('click', function(){
-    createGrillEasy(49);
+    gridContainerHtml.innerHTML = "";
+    gridContainerHtml.classList.add("hard");
+    createGrillHard(49);
 })
