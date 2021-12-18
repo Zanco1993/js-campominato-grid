@@ -8,27 +8,11 @@ con difficoltà 3 => tra 1 e 49
 Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 */
 
-function createGrillEasy(max){
-   
+function createGrill(max){
         for (let i = 1; i <= max; i++) {
             createNewBox(gridContainerHtml, i);
         }
     }
-
-
-function createGrillMedium(max){
-        for (let i = 1; i <= max; i++) {
-            createNewBox(gridContainerHtml, i);
-        }
-
-}
-
-function createGrillHard(max){
-        for (let i = 1; i <= max; i++) {
-            createNewBox(gridContainerHtml, i);
-        }
-    
-}
 
 function createNewBox(container, n) {
     const square = document.createElement('div');
@@ -38,10 +22,8 @@ function createNewBox(container, n) {
     square.addEventListener('click', function(){
         // this.classList.add('blue');
         this.classList.toggle('blue'); //accendi spegni colore
-
     })   
 }
-
 
 const gridContainerHtml = document.querySelector('.grid-container');
 const buttonEasy = document.querySelector('.easy-difficult');
@@ -52,19 +34,19 @@ buttonEasy.addEventListener('click', function(){
     gridContainerHtml.innerHTML = "";
     gridContainerHtml.classList.add("easy");
     gridContainerHtml.classList.remove("medium", "hard");
-    createGrillEasy(100);
+    createGrill(100);
 })
 
 buttonMedium.addEventListener('click', function(){
     gridContainerHtml.innerHTML = "";
     gridContainerHtml.classList.add("medium");
     gridContainerHtml.classList.remove("easy", "hard");
-    createGrillMedium(81);
+    createGrill(81);
 })
 
 buttonHard.addEventListener('click', function(){
     gridContainerHtml.innerHTML = "";
     gridContainerHtml.classList.add("hard");
     gridContainerHtml.classList.remove("medium", "easy");
-    createGrillHard(49);
+    createGrill(49);
 })
